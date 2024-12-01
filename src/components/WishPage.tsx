@@ -77,25 +77,27 @@ const WishPage: React.FC = () => {
     return (
         <>
             <AddWishForm onSubmit={onNewWishCreated} />
-            <h1 className="title">My Wishlist</h1>
-            <div className="wish-page">
-                <ul className="wish-list">
-                    {Array.isArray(wishes) && wishes.length > 0 ? (
-                        wishes.map((wish) => (
-                            <li key={wish.id}>
-                                <Wish
-                                    key={wish.id}
-                                    {...wish}
-                                    onMarkAsDone={handleMarkAsDone}
-                                    onDelete={handleDeleteWish}
-                                />
-                            </li>
-                        ))
-                    ) : (
-                        <p>No wishes available.</p>
-                    )}
-                </ul>
-            </div >
+            <div className="wrapper">
+                <h1 className="title">My Wishlist</h1>
+                <div className="wish-page">
+                    <ul className="wish-list">
+                        {Array.isArray(wishes) && wishes.length > 0 ? (
+                            wishes.map((wish) => (
+                                <li key={wish.id}>
+                                    <Wish
+                                        key={wish.id}
+                                        {...wish}
+                                        onMarkAsDone={handleMarkAsDone}
+                                        onDelete={handleDeleteWish}
+                                    />
+                                </li>
+                            ))
+                        ) : (
+                            <p>No wishes available.</p>
+                        )}
+                    </ul>
+                </div >
+            </div>
         </>
     );
 };
