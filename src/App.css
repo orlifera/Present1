@@ -1,0 +1,325 @@
+:root {
+  --primary-100: #ffc400;
+  --primary-200: #ddb900;
+  --primary-300: #917800;
+  --accent-100: #d0c061cb;
+  --accent-200: #dabb6c;
+  --text-100: #333333;
+  --text-200: #5c5c5c;
+  --bg-100: #ebdda8;
+  --bg-200: #eace40;
+  --bg-300: #f3e7ac;
+  --complete-green: #6ed371;
+  --incomplete-red: #dc564d;
+}
+
+#root {
+  height: 100dvh;
+  width: 100%;
+}
+
+/* Basic reset for gallery images */
+* {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+
+body {
+  background-color: var(--bg-100);
+  color: var(--text-100);
+}
+
+#header {
+  height: 100%;
+  margin: 0;
+  padding: 1em;
+  color: var(--primary-200);
+}
+
+.title {
+  padding: 1em;
+  font-size: 2em;
+  text-align: center;
+}
+
+
+/*MOBILE NAV*/
+
+#mobile-nav {
+  font-weight: bold;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  border-radius: 0px;
+  /* padding: 2em; */
+}
+
+#mobile-nav .nav-li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Added for positioning the border */
+}
+
+#mobile-nav .active {
+  border-radius: 0px;
+
+}
+
+
+/*NAVBAR*/
+
+.navbar {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-200);
+  width: 40%;
+  height: 3em;
+  border-radius: 10px;
+  background-color: var(--bg-200);
+  margin: 2em auto;
+}
+
+.nav-list {
+  justify-content: space-evenly;
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Added for positioning the border */
+}
+
+
+.nav-li:hover {
+  background-color: var(--bg-300);
+  transition: background-color 0.3s, border-radius 0.3s, border-right 0.3s;
+  /* Specify the properties to transition */
+  border-radius: 10px;
+  border-right: none;
+}
+
+.nav-li:hover .link {
+  color: var(--primary-100);
+  transition: 0.3s;
+}
+
+.nav-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.active {
+  color: var(--primary-100);
+  background-color: var(--bg-300);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+
+.link:hover:not(.nav-link.active) {
+  color: var(--primary-100);
+  transition: 0.3s;
+}
+
+.link:not(.nav-link.active) {
+  color: var(--text-200);
+  text-decoration: none;
+}
+
+
+/* Container for the gallery */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+/* Grid layout for the gallery images */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Responsive grid */
+  gap: 1em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  max-width: 200em;
+  padding: 0 .8em;
+}
+
+.image-list {
+  display: contents;
+  /* or block, if spacing is needed */
+}
+
+/* Style for each gallery image */
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-200);
+  /* Set a fixed height for consistency */
+  object-fit: contain;
+  /* Ensure the image covers the area without distortion */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* subtle shadow */
+}
+
+/* Hover effects on images */
+.gallery-image:hover {
+  transform: scale(1.05);
+  /* Slight zoom-in effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* Increase shadow on hover */
+}
+
+
+/*WISHLIST*/
+
+.wish-page {
+  width: 70%;
+  border-radius: 10px;
+  background-color: var(--bg-200);
+  height: 70%;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: scroll;
+}
+
+.wish-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-300);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.wish-list li {
+  margin: 1em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete {
+  background-color: var(--complete-green);
+  color: white;
+}
+
+.not-completed {
+  background-color: var(--incomplete-red);
+  color: white;
+}
+
+
+
+/*Wish Form*/
+
+.wish-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+  background-color: var(--bg-300);
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+.wish-content {
+  width: 100%;
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#form-title {
+  text-align: center;
+  width: 100%;
+  font-size: 1.2em;
+  padding: .5em;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin: .5em;
+  text-align: center;
+}
+
+.wish-content input,
+.wish-content textarea {
+  width: 80%;
+  padding: .5em;
+  border-radius: 5px;
+  border: none;
+  margin: .5em;
+  text-align: center;
+}
+
+.wish-content button {
+  width: 20%;
+  border-radius: 5px;
+  border: none;
+  margin: .5em;
+  background-color: var(--primary-200);
+  color: black;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Smaller columns on smaller screens */
+  }
+}
+
+/* For very small devices like mobile */
+@media (max-width: 480px) {
+  .gallery-image {
+    border-radius: 5px;
+    /* Slightly smaller border-radius on mobile */
+  }
+}
