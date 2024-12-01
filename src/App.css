@@ -9,6 +9,23 @@
   --bg-100: #ebdda8;
   --bg-200: #eace40;
   --bg-300: #f3e7ac;
+
+  /* 
+  
+        FallBack Colors 
+    --primary-100: #8B5FBF;
+    --primary-200: #61398F;
+    --primary-300: #FFFFFF;
+    --accent-100: #D6C6E1;
+    --accent-200: #9A73B5;
+    --text-100: #4A4A4A;
+    --text-200: #878787;
+    --bg-100: #F5F3F7;
+    --bg-200: #E9E4ED;
+    --bg-300: #FFFFFF; 
+
+  */
+
   --complete-green: #6ed371;
   --incomplete-red: #dc564d;
 }
@@ -26,8 +43,6 @@
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-
 
 
 body {
